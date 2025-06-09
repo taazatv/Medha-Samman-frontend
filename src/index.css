@@ -150,10 +150,10 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  @apply rounded-none bg-amber-950/75;
+  @apply rounded-none bg-[#dd1f58]/75;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-amber-950;
+  @apply bg-[#dd1f58];
 }
