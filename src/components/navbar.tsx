@@ -25,7 +25,7 @@ export default function Navbar() {
       <div className="flex gap-4 py-2 text-3xl font-bold">
         {/* <FontAwesomeIcon icon={faChessQueen} className="text-primary" />
         <div>Youngotsav</div> */}
-        <img src={"./Medha-logo.png"} className="h-20" />
+        <img src={"/Medha-logo.png"} className="h-20" />
       </div>
 
       <div className="[&_*]:hover:text-primary flex items-center gap-8 text-xl font-semibold [&_*]:not-hover:text-white">

@@ -11,7 +11,7 @@ const eventProps: EventCardProps[] = [
   },
   {
     imgUrl: "/kwizdom.png",
-    date: "JULY 2025",
+    date: "November 2025",
     title: "KWIZDOM 3.0",
     description:
       "Taaza TV has officially started its flagship quiz competition, KWIZDOM aimed at fostering academic excellence and national pride among students in Kolkata. This unique initiative was started with GRSE (Ministry of Defence) and now reached to 115 schools of Kolkata, where in each student of a class has to give this examination in the school by compulsion. With this activity we reach 50,000 students each year.",
@@ -19,8 +19,8 @@ const eventProps: EventCardProps[] = [
   },
   {
     imgUrl: "/medha.jpg",
-    date: "JUNE 2025",
-    title: "MEDHA SAMMAN",
+    date: "JUlY 2025",
+    title: "MEDHA SAMMAN-CLASS X ",
     description:
       "This prestigious event is dedicated to recognizing and honoring the exceptional academic achievements of young minds. With a perfect blend of tradition and contemporary excellence, Medha Samman promises to be an unforgettable celebration of brilliance and intellectual prowess. Already in its 15th year – Medha Samman reaches to 100+ schools and more than 20,000 toppers of the city have been honored.",
     details:
@@ -51,9 +51,18 @@ const eventProps: EventCardProps[] = [
     date: "JUNE 2025",
     title: "AADHI DUNIYA",
     description:
-      "Aadhi Duniya by Taaza TV is a bold and insightful initiative that brings forward the unheard voices and untold stories of half the world — the women, youth, and marginalized communities that shape our society every day. This segment aims to spotlight real issues, and question the status quo with fearless journalism and authentic storytelling. From social movements to everyday struggles and successes, Aadhi Duniya creates a powerful platform for dialogue, change, and empowerment. Tune in to experience stories that matter — raw, real, and relevant — only on Taaza TV.",
+      "Aadhi Duniya by Taaza TV is a bold and insightful initiative that brings forward the unheard voices and untold stories of half the world — the women, youth, and marginalized communities that shape our society every day. This segment aims to spotlight real issues, and question the status quo with fearless journalism and authentic storytelling.",
     details:
       "Aadhi Duniya by Taaza TV is a bold and insightful initiative that brings forward the unheard voices and untold stories of half the world — the women, youth, and marginalized communities that shape our society every day. This segment aims to spotlight real issues, celebrate achievements, and question the status quo with fearless journalism and authentic storytelling. From social movements to everyday struggles and successes, Aadhi Duniya creates a powerful platform for dialogue, change, and empowerment. Tune in to experience stories that matter — raw, real, and relevant — only on **Taaza TV**, where every voice counts.",
+  },
+  {
+    imgUrl: "/SUPER30.jpg",
+    date: "JUNE 2025",
+    title: "SUPER 30",
+    description:
+      " Marwari Education Conclave SUPER 30 At HOTEL ITC SONAR - The grand celebration of 30 Marwari students getting 99% or above marks in their board examinations.",
+    details:
+      " Marwari Education Conclave SUPER 30 At HOTEL ITC SONAR - The grand celebration of 30 Marwari students getting 99% or above marks in their board examinations.",
   },
 ];
 

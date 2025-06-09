@@ -13,12 +13,17 @@ export default function Description() {
         <div className="w-full max-w-2xl text-lg/loose">
           ✅ 2,000 Toppers | ✅ 21st June 2025 | ✅ Dhano Dhanyo
           <br />
-          <br /> • Medha Samman 2025 will honor 2,000 top students from 100
-          schools across Kolkata and Howrah for their outstanding achievements
-          in the Class XII Board Exams. <br /> • The event will be held at the
-          grand Dhano Dhanyo Main Auditorium on June 21, 2025, will feature
-          speeches by eminent educationalists and industrialists. <br /> • In
-          its 15th year the event has doubled its scale, grandeur and glory.
+          <br />
+          •This prestigious event is dedicated to recognizing and honoring the
+          exceptional academic achievements of young minds. With a perfect blend
+          of tradition and contemporary excellence, Medha Samman promises to be
+          an unforgettable celebration of brilliance and intellectual prowess.
+          Already in its 15th year – Medha Samman reaches to 100+ schools and
+          more than 20,000 toppers of the city have been honored.
+          <br /> • The event will be held at the grand Dhano Dhanyo Main
+          Auditorium on June 21, 2025, will feature speeches by eminent
+          educationalists and industrialists. <br /> • In its 15th year the
+          event has doubled its scale, grandeur and glory.
         </div>
       </div>
       <div className="right-content flex w-full justify-center self-end">
