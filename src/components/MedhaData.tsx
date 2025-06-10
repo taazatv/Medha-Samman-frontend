@@ -177,11 +177,11 @@ function MedhaData() {
             <table className="min-w-full bg-white">
               <thead className="bg-blue-600 text-white">
                 <tr>
-                  <th className="px-4 py-3 text-left">School</th>
-                  <th className="px-4 py-3 text-left">Student</th>
+                  <th className="px-4 py-3 text-left">School Name</th>
+                  <th className="px-4 py-3 text-left">Student Name</th>
                   <th className="px-4 py-3 text-left">Venue</th>
                   <th className="px-4 py-3 text-left">Date</th>
-                  <th className="px-4 py-3 text-left">Time</th>
+                  <th className="px-4 py-3 text-left">Registration Time</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
@@ -190,14 +190,16 @@ function MedhaData() {
                     <td className="px-4 py-3">{item.schoolName}</td>
                     <td className="px-4 py-3">{item.studentName}</td>
                     <td className="px-4 py-3">{item.venue}</td>
-                    <td className="px-4 py-3">
-                      {new Date(item.date).toLocaleDateString()}
-                    </td>
+                    <td className="px-4 py-3">{item.date}</td>
                     <td className="px-4 py-3">{item.registrationTime}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
+            <div className="mt-4 text-center font-bold text-red-600">
+              NOTE: IF THERE IS ANY DESCRIPENCY PLEASE MAIL TO
+              events@taazatv.com.
+            </div>
           </div>
         ) : (
           hasSearched &&
@@ -208,6 +210,7 @@ function MedhaData() {
           )
         )}
       </div>
+
       <Footer></Footer>
     </>
   );
