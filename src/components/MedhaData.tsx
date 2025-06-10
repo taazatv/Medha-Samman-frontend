@@ -41,13 +41,16 @@ function MedhaData() {
     const fetchSuggestions = async () => {
       try {
         setIsLoading(true);
-        const res = await axios.get("http://localhost:8000/api/schools", {
-          params: {
-            city: city.toLowerCase(),
-            classType: classType.replace("class-", ""),
-            query: search,
+        const res = await axios.get(
+          import.meta.env.VITE_BACKEND_URL + "/api/schools",
+          {
+            params: {
+              city: city.toLowerCase(),
+              classType: classType.replace("class-", ""),
+              query: search,
+            },
           },
-        });
+        );
         setSuggestions(res.data);
       } catch (err) {
         console.error("Error fetching suggestions:", err);
@@ -70,13 +73,16 @@ function MedhaData() {
 
     try {
       setIsLoading(true);
-      const res = await axios.get("http://localhost:8000/api/search", {
-        params: {
-          city: city.toLowerCase(),
-          classType: classType.replace("class-", ""),
-          school: search.trim(),
+      const res = await axios.get(
+        import.meta.env.VITE_BACKEND_URL + "/api/search",
+        {
+          params: {
+            city: city.toLowerCase(),
+            classType: classType.replace("class-", ""),
+            school: search.trim(),
+          },
         },
-      });
+      );
 
       if (res.data.length === 0) {
         setError(`No results found for ${search.trim()}`);
