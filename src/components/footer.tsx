@@ -9,7 +9,13 @@ export default function Footer() {
           src={"/Medha-logo.png"}
           className="h-min w-full max-w-sm object-contain"
         />
-        <img src={"/poster.png"} className="aspect-[3/2] max-w-sm"></img>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.30373852717!2d88.33672057529921!3d22.530291979521916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027746475abbcd%3A0x97ab4cf0c716e313!2sDhono%20Dhanyo%20Auditorium!5e0!3m2!1sen!2sin!4v1749617914903!5m2!1sen!2sin"
+          className="aspect-[3/2] w-full max-w-sm"
+          allowFullScreen={true}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
         <div className="flex flex-col justify-center gap-4 text-white">
           <div className="text-xl font-bold">About the Organiser</div>
           <div className="max-w-md">

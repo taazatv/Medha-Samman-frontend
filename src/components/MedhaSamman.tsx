@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 
 function MedhaSamman() {
   return (
-    <div className="relative flex w-fit flex-col items-center justify-center rounded-xl bg-[#dd1f58] p-8">
-      <div className="absolute top-2 self-end pr-24 text-white">
+    <div className="relative mt-4 flex w-full items-center justify-evenly rounded-xl bg-[#e7c91ce8] p-8 max-md:flex-col">
+      <img className="w-1/8 max-md:w-2/3" src="/Medha-logo.png"></img>
+      <div className="top-6 right-72 text-lg font-bold text-black md:absolute md:self-end">
         Click here for more updates
       </div>
-      <table className="w-[90vw] max-w-[1000px] border-collapse overflow-hidden rounded-2xl border border-gray-300 bg-white shadow-lg">
+      <table className="max-w-[1000px] border-collapse overflow-hidden rounded-2xl border border-gray-300 bg-white shadow-lg md:w-[90vw]">
         <tbody>
           <tr className="transition hover:scale-[1.01] hover:bg-slate-100">
             <td className="border border-gray-300 bg-[#e6f0fa] p-5 text-center text-lg font-semibold text-gray-800">

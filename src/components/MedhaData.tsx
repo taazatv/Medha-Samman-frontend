@@ -108,9 +108,12 @@ function MedhaData() {
     setSuggestions([]);
     setHasSearched(false);
   };
+  useEffect(() => {
+    document.getElementById("navbar")?.scrollTo();
+  }, []);
 
   return (
-    <>
+    <div id="MedhaData">
       <Navbar></Navbar>
       <div className="mx-auto min-h-screen max-w-4xl p-6">
         <h1 className="mb-6 text-center text-4xl font-bold uppercase">
@@ -218,7 +221,7 @@ function MedhaData() {
       </div>
 
       <Footer></Footer>
-    </>
+    </div>
   );
 }
 

@@ -20,12 +20,12 @@ export default function Navbar() {
   return (
     <section
       id="navbar"
-      className="flex w-screen items-center justify-around gap-16 bg-[#dd1f58] px-8 py-0 text-white"
+      className="flex w-screen items-center justify-around gap-16 bg-[#dd1f58] px-8 py-4 text-white"
     >
       <div className="flex gap-4 py-2 text-3xl font-bold">
         {/* <FontAwesomeIcon icon={faChessQueen} className="text-primary" />
         <div>Youngotsav</div> */}
-        <img src={"/Medha-logo.png"} className="h-20" />
+        <img src={"/taaza-tv.png"} className="h-16" />
       </div>
 
       <div className="[&_*]:hover:text-primary flex items-center gap-8 text-xl font-semibold [&_*]:not-hover:text-white">
@@ -86,9 +86,9 @@ export default function Navbar() {
         >
           <FontAwesomeIcon icon={faInstagram} />
         </a>
-        <a target="_blank" href="https://taazatv.com/">
-          <img className="h-12 max-md:hidden" src="/taaza-tv.png" />
-        </a>
+        {/* <a target="_blank" href="https://taazatv.com/"> */}
+        {/* <img className="h-12 max-md:hidden" src="/taaza-tv.png" /> */}
+        {/* </a> */}
       </div>
     </section>
   );

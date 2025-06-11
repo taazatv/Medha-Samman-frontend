@@ -4,7 +4,6 @@ import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import Events from "./components/events";
 import Gallery from "@/components/gallery";
-import MedhaSamman from "./components/MedhaSamman";
 import MedhaData from "./components/MedhaData"; //
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
           <div className="flex min-h-svh flex-col items-center overflow-x-hidden">
             <Navbar />
             <Description />
-            <MedhaSamman />
             <Gallery />
             <Events />
             <Footer />
