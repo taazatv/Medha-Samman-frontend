@@ -113,7 +113,7 @@ export default function Description() {
         {/* <div className="line w-full text-4xl/tight font-extrabold text-neutral-900 md:text-6xl/tight"> */}
         {/* MEDHA SAMMAN 2025 */}
         {/* </div> */}
-        <div className="w-full rounded-xl bg-[#ec183c] px-16 py-8 text-2xl font-bold text-white max-md:p-4">
+        <div className="w-full rounded-xl bg-[#ec183c] px-16 py-8 text-base font-bold text-white max-md:p-4">
           This prestigious event is dedicated to recognizing and honoring the
           exceptional academic achievements of young minds. With a perfect blend
           of tradition and contemporary excellence, Medha Samman promises to be

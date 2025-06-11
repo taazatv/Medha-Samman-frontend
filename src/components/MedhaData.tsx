@@ -121,6 +121,18 @@ function MedhaData() {
           <div className="text-secondary text-2xl font-bold">
             {classType.replace("-", " ")} - {city}
           </div>
+          <div className="mt-2 text-center text-sm font-bold text-amber-600">
+            On{" "}
+            {city === "kolkata"
+              ? classType === "class-12"
+                ? "21st JUNE 2025"
+                : "12th JULY 2025"
+              : "28th JUNE 2025"}{" "}
+            at{" "}
+            {city === "kolkata"
+              ? "DHONO DHANYO AUDITORIUM"
+              : "ARYABHATTA AUDITORIUM"}
+          </div>
         </h1>
 
         <div className="mb-8">
