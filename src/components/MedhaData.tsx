@@ -200,8 +200,8 @@ function MedhaData() {
                 <tr>
                   <th className="px-4 py-3 text-left">School Name</th>
                   <th className="px-4 py-3 text-left">Student Name</th>
-                  <th className="px-4 py-3 text-left">Venue</th>
-                  <th className="px-4 py-3 text-left">Date</th>
+                  {/* <th className="px-4 py-3 text-left">Venue</th>
+                  <th className="px-4 py-3 text-left">Date</th> */}
                   <th className="px-4 py-3 text-left">Registration Time</th>
                 </tr>
               </thead>
@@ -210,8 +210,8 @@ function MedhaData() {
                   <tr key={index} className="hover:bg-gray-50">
                     <td className="px-4 py-3">{item.schoolName}</td>
                     <td className="px-4 py-3">{item.studentName}</td>
-                    <td className="px-4 py-3">{item.venue}</td>
-                    <td className="px-4 py-3">{item.date}</td>
+                    {/* <td className="px-4 py-3">{item.venue}</td>
+                    <td className="px-4 py-3">{item.date}</td> */}
                     <td className="px-4 py-3">{item.registrationTime}</td>
                   </tr>
                 ))}
