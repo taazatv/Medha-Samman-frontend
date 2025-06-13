@@ -15,23 +15,47 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
+import { Link, useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+  const [isBackHidden, setIsBackHidden] = useState(false);
+  useEffect(() => {
+    setIsBackHidden(location.pathname === "/");
+  }, [location]);
   return (
     <section
       id="navbar"
       className="flex w-screen items-center justify-around gap-16 bg-[#dd1f58] px-8 py-4 text-white"
     >
+      <Button
+        size="icon"
+        variant="default"
+        className={
+          isBackHidden
+            ? "hidden"
+            : "absolute left-16 max-md:top-0 max-md:left-0"
+        }
+        onClick={() => navigate(-1)}
+      >
+        <ArrowLeft></ArrowLeft>
+      </Button>
       <div className="flex gap-4 py-2 text-3xl font-bold">
         {/* <FontAwesomeIcon icon={faChessQueen} className="text-primary" />
         <div>Youngotsav</div> */}
-        <img src={"/taaza-tv.png"} className="h-16" />
+
+        <a href="https://taazatv.com/">
+          <img src={"/taaza-tv.png"} className="h-16" />
+        </a>
       </div>
 
       <div className="[&_*]:hover:text-primary flex items-center gap-8 text-xl font-semibold [&_*]:not-hover:text-white">
         <a className="max-md:hidden" href="#gallery">
           Gallery
         </a>
+        <Link to="/faqs">FAQs</Link>
         <Drawer>
           <DrawerTrigger className="cursor-pointer text-white">
             <FontAwesomeIcon icon={faBars} />
