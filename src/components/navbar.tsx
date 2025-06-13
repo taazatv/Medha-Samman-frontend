@@ -63,7 +63,7 @@ export default function Navbar() {
             </div>
             <div className="flex items-center gap-4">
               <FontAwesomeIcon icon={faPhone} className="text-primary" />
-              +91 9830797700
+              +91 9831669987
             </div>
             <div className="flex items-center gap-4">
               <FontAwesomeIcon icon={faAt} className="text-primary" />

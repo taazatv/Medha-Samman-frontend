@@ -46,15 +46,15 @@ const eventProps: EventCardProps[] = [
       "Taaza TV presents Ladies Summer Camp 2025. A high-engagement, emotion-led platform curated for 2,000+ women across 10 women’s clubs & sanstha’s in Kolkata & Howrah.Summer Camp 2025 idea uses the fun and community spirit of a summer camp to showcase the beauty and confidence of women. It's more than just womanhood; it's about creating an engaging and memorable experience for thousands of women.",
   },
 
-  {
-    imgUrl: "/aadhiduniya.png",
-    date: "JUNE 2025",
-    title: "AADHI DUNIYA",
-    description:
-      "Aadhi Duniya by Taaza TV is a bold and insightful initiative that brings forward the unheard voices and untold stories of half the world — the women, youth, and marginalized communities that shape our society every day. This segment aims to spotlight real issues, and question the status quo with fearless journalism and authentic storytelling.",
-    details:
-      "Aadhi Duniya by Taaza TV is a bold and insightful initiative that brings forward the unheard voices and untold stories of half the world — the women, youth, and marginalized communities that shape our society every day. This segment aims to spotlight real issues, celebrate achievements, and question the status quo with fearless journalism and authentic storytelling. From social movements to everyday struggles and successes, Aadhi Duniya creates a powerful platform for dialogue, change, and empowerment. Tune in to experience stories that matter — raw, real, and relevant — only on **Taaza TV**, where every voice counts.",
-  },
+  // {
+  //   imgUrl: "/aadhiduniya.png",
+  //   date: "JUNE 2025",
+  //   title: "AADHI DUNIYA",
+  //   description:
+  //     "Aadhi Duniya by Taaza TV is a bold and insightful initiative that brings forward the unheard voices and untold stories of half the world — the women, youth, and marginalized communities that shape our society every day. This segment aims to spotlight real issues, and question the status quo with fearless journalism and authentic storytelling.",
+  //   details:
+  //     "Aadhi Duniya by Taaza TV is a bold and insightful initiative that brings forward the unheard voices and untold stories of half the world — the women, youth, and marginalized communities that shape our society every day. This segment aims to spotlight real issues, celebrate achievements, and question the status quo with fearless journalism and authentic storytelling. From social movements to everyday struggles and successes, Aadhi Duniya creates a powerful platform for dialogue, change, and empowerment. Tune in to experience stories that matter — raw, real, and relevant — only on **Taaza TV**, where every voice counts.",
+  // },
   {
     imgUrl: "/SUPER30.jpg",
     date: "JUNE 2025",
@@ -73,7 +73,7 @@ export default function Events() {
       className="flex w-screen flex-col items-center gap-8 px-8 py-16"
     >
       <hr className="border-secondary w-16 border-t-4" />
-      <div className="mb-8 text-4xl font-bold md:text-6xl">Upcoming Events</div>
+      <div className="mb-8 text-4xl font-bold md:text-6xl">Taazatv Events</div>
       <div className="flex w-[80vw] justify-start gap-8 overflow-x-scroll overflow-y-hidden max-md:flex-col">
         {eventProps.map((props, i) => (
           <EventCard {...props} key={i} />
