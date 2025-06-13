@@ -4,6 +4,7 @@ import axios from "axios";
 import Navbar from "./navbar";
 import Footer from "./footer";
 
+
 interface StudentData {
   schoolName: string;
   studentName: string;
@@ -161,6 +162,8 @@ function MedhaData() {
                     </div>
                   )}
 
+                
+
                 {suggestions.length > 0 && !selectedSchool && !hasSearched && (
                   <ul className="absolute top-full z-10 mt-1 max-h-60 w-full overflow-y-auto rounded-lg border border-gray-200 bg-white shadow-lg">
                     {suggestions.map((school, index) => (
@@ -217,6 +220,7 @@ function MedhaData() {
                 ))}
               </tbody>
             </table>
+          
             <div className="mt-4 text-center font-bold text-red-600">
               NOTE: IF THERE IS ANY DESCRIPENCY PLEASE MAIL TO
               events@taazatv.com.
