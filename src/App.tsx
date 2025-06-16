@@ -27,6 +27,7 @@ function App() {
 
           <Route path="/:city/:classType" element={<MedhaData />} />
           <Route path="/faqs" element={<Faqs />} />
+          {/* <Route path="/gallary/:classType" element={<MedhaData />} /> */}
         </Routes>
       </div>{" "}
     </>

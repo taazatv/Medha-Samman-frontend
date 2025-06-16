@@ -4,6 +4,7 @@ import axios from "axios";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import Form from "./Form";
+
 interface StudentData {
   schoolName: string;
   studentName: string;
@@ -108,13 +109,23 @@ function MedhaData() {
     setSuggestions([]);
     setHasSearched(false);
   };
+
   useEffect(() => {
     document.getElementById("navbar")?.scrollTo();
   }, []);
 
+  useEffect(() => {
+    if (!search.trim()) {
+      setSelectedSchool("");
+      setHasSearched(false);
+      setResults([]);
+      setSuggestions([]);
+    }
+  }, [search]);
+
   return (
     <div id="MedhaData">
-      <Navbar></Navbar>
+      <Navbar />
       <div className="mx-auto min-h-screen max-w-4xl p-6">
         <h1 className="mb-6 text-center text-4xl font-bold uppercase">
           Medha Samman
@@ -200,8 +211,6 @@ function MedhaData() {
                 <tr>
                   <th className="px-4 py-3 text-left">School Name</th>
                   <th className="px-4 py-3 text-left">Student Name</th>
-                  {/* <th className="px-4 py-3 text-left">Venue</th>
-                  <th className="px-4 py-3 text-left">Date</th> */}
                   <th className="px-4 py-3 text-left">Registration Time</th>
                 </tr>
               </thead>
@@ -210,8 +219,6 @@ function MedhaData() {
                   <tr key={index} className="hover:bg-gray-50">
                     <td className="px-4 py-3">{item.schoolName}</td>
                     <td className="px-4 py-3">{item.studentName}</td>
-                    {/* <td className="px-4 py-3">{item.venue}</td>
-                    <td className="px-4 py-3">{item.date}</td> */}
                     <td className="px-4 py-3">{item.registrationTime}</td>
                   </tr>
                 ))}
@@ -223,7 +230,7 @@ function MedhaData() {
               events@taazatv.com.
             </div>
 
-            <Form></Form>
+            <Form />
           </div>
         ) : (
           hasSearched &&

@@ -1,3 +1,4 @@
+import emailjs from "@emailjs/browser";
 import React, { FormEvent, useState } from "react";
 
 interface FormData {
@@ -10,6 +11,8 @@ interface FormData {
 }
 
 function Form() {
+  emailjs.init({ publicKey: "M4KHgRmUTUXxIpTxU" });
+
   const [formData, setFormData] = useState<FormData>({
     name: "",
     schoolName: "",
@@ -18,6 +21,7 @@ function Form() {
     phoneNo: "",
     query: "",
   });
+
   const [phoneError, setPhoneError] = useState<string>("");
 
   const handleInputChange = (
@@ -38,12 +42,38 @@ function Form() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+
     if (formData.phoneNo.length !== 10) {
       setPhoneError("Phone number must be 10 digits");
       return;
     }
-    console.log("Form submitted:", formData);
-    // Add form submission logic here
+
+    emailjs
+      .send("service_vmmjwur", "template_zis1hyr", {
+        subject: "ByStudent",
+        name: formData.name,
+        schoolname: formData.schoolName,
+        city: formData.city,
+        class: formData.class,
+        phone: formData.phoneNo,
+        message: formData.query,
+      })
+      .then(() => {
+        alert("Form submitted successfully!");
+        setFormData({
+          name: "",
+          schoolName: "",
+          city: "",
+          class: "",
+          phoneNo: "",
+          query: "",
+        });
+        setPhoneError("");
+      })
+      .catch((error) => {
+        console.error("EmailJS error:", error);
+        alert("Something went wrong while sending the form. Please try again.");
+      });
   };
 
   return (
@@ -67,7 +97,7 @@ function Form() {
               value={formData.name}
               onChange={handleInputChange}
               placeholder="Full name"
-              className="mt-1 block w-full rounded-md border border-gray-200 bg-gray-50 p-2 text-sm text-gray-900 transition-colors focus:border-indigo-500 focus:ring-2 focus:ring-indigo-300"
+              className="mt-1 block w-full rounded-md border border-gray-200 bg-gray-50 p-2 text-sm text-gray-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-300"
               required
             />
           </div>
@@ -85,7 +115,7 @@ function Form() {
               value={formData.schoolName}
               onChange={handleInputChange}
               placeholder="School name"
-              className="mt-1 block w-full rounded-md border border-gray-200 bg-gray-50 p-2 text-sm text-gray-900 transition-colors focus:border-indigo-500 focus:ring-2 focus:ring-indigo-300"
+              className="mt-1 block w-full rounded-md border border-gray-200 bg-gray-50 p-2 text-sm text-gray-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-300"
               required
             />
           </div>
@@ -103,7 +133,7 @@ function Form() {
               value={formData.city}
               onChange={handleInputChange}
               placeholder="City"
-              className="mt-1 block w-full rounded-md border border-gray-200 bg-gray-50 p-2 text-sm text-gray-900 transition-colors focus:border-indigo-500 focus:ring-2 focus:ring-indigo-300"
+              className="mt-1 block w-full rounded-md border border-gray-200 bg-gray-50 p-2 text-sm text-gray-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-300"
               required
             />
           </div>
@@ -121,7 +151,7 @@ function Form() {
               value={formData.class}
               onChange={handleInputChange}
               placeholder="Class (e.g., 10th)"
-              className="mt-1 block w-full rounded-md border border-gray-200 bg-gray-50 p-2 text-sm text-gray-900 transition-colors focus:border-indigo-500 focus:ring-2 focus:ring-indigo-300"
+              className="mt-1 block w-full rounded-md border border-gray-200 bg-gray-50 p-2 text-sm text-gray-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-300"
               required
             />
           </div>
@@ -139,7 +169,9 @@ function Form() {
               value={formData.phoneNo}
               onChange={handleInputChange}
               placeholder="10-digit phone number"
-              className={`mt-1 block w-full rounded-md border ${phoneError ? "border-red-500" : "border-gray-200"} bg-gray-50 p-2 text-sm text-gray-900 transition-colors focus:border-indigo-500 focus:ring-2 focus:ring-indigo-300`}
+              className={`mt-1 block w-full rounded-md border ${
+                phoneError ? "border-red-500" : "border-gray-200"
+              } bg-gray-50 p-2 text-sm text-gray-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-300`}
               required
             />
             {phoneError && (
@@ -159,7 +191,7 @@ function Form() {
               value={formData.query}
               onChange={handleInputChange}
               placeholder="Query or name change request"
-              className="mt-1 block w-full resize-none rounded-md border border-gray-200 bg-gray-50 p-2 text-sm text-gray-900 transition-colors focus:border-indigo-500 focus:ring-2 focus:ring-indigo-300"
+              className="mt-1 block w-full resize-none rounded-md border border-gray-200 bg-gray-50 p-2 text-sm text-gray-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-300"
               rows={3}
               required
             />
@@ -167,7 +199,7 @@ function Form() {
           <div>
             <button
               type="submit"
-              className="w-full transform rounded-md bg-indigo-600 py-2 font-medium text-white transition-colors hover:scale-105 hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-400 focus:outline-none"
+              className="w-full rounded-md bg-indigo-600 py-2 font-medium text-white transition-transform hover:scale-105 hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-400 focus:outline-none"
             >
               Submit
             </button>
