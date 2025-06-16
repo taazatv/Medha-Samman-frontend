@@ -11,7 +11,7 @@ const eventProps: EventCardProps[] = [
   },
   {
     imgUrl: "/kwizdom.png",
-    date: "November 2025",
+    date: "JULY 2025",
     title: "KWIZDOM 3.0",
     description:
       "Taaza TV has officially started its flagship quiz competition, KWIZDOM aimed at fostering academic excellence and national pride among students in Kolkata. This unique initiative was started with GRSE (Ministry of Defence) and now reached to 115 schools of Kolkata, where in each student of a class has to give this examination in the school by compulsion. With this activity we reach 50,000 students each year.",
@@ -19,7 +19,7 @@ const eventProps: EventCardProps[] = [
   },
   {
     imgUrl: "/medha.jpg",
-    date: "JUlY 2025",
+    date: "JUNE - JULY 2025",
     title: "MEDHA SAMMAN-CLASS X ",
     description:
       "This prestigious event is dedicated to recognizing and honoring the exceptional academic achievements of young minds. With a perfect blend of tradition and contemporary excellence, Medha Samman promises to be an unforgettable celebration of brilliance and intellectual prowess. Already in its 15th year – Medha Samman reaches to 100+ schools and more than 20,000 toppers of the city have been honored.",
@@ -61,8 +61,7 @@ const eventProps: EventCardProps[] = [
     title: "SUPER 30",
     description:
       " Marwari Education Conclave SUPER 30 At HOTEL ITC SONAR - The grand celebration of 30 Marwari students getting 99% or above marks in their board examinations.",
-    details:
-      " Marwari Education Conclave SUPER 30 At HOTEL ITC SONAR - The grand celebration of 30 Marwari students getting 99% or above marks in their board examinations.",
+    link: "https://super30.taazatv.comS/",
   },
 ];
 
