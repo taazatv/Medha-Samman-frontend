@@ -75,7 +75,7 @@ function MedhaData() {
     try {
       setIsLoading(true);
       const res = await axios.get(
-         "http://localhost:8000/api/search",
+         import.meta.env.VITE_BACKEND_URL + "/api/search",
         {
           params: {
             city: city.toLowerCase(),
