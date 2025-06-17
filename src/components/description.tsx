@@ -82,7 +82,7 @@ export default function Description() {
       </div>
       {/* @ts-ignore */}
       <marquee className="bg-amber-400 py-4 font-bold">
-        <span>RESULTS PUBLISED FOR </span>
+        <span>LIST OF SCHOOLS:</span>
         {schoolNames.map((schoolName) => (
           <span> • {schoolName}</span>
         ))}

@@ -80,7 +80,7 @@ function Form() {
     <div className="flex items-center justify-center bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 p-4">
       <div className="w-full max-w-sm transform rounded-2xl bg-white p-5 shadow-xl transition-all hover:scale-105">
         <h2 className="mb-4 text-center text-2xl font-bold text-indigo-700">
-          Medha Samman Form
+          Grievance Form
         </h2>
         <form onSubmit={handleSubmit} className="space-y-3">
           <div>

@@ -5,7 +5,7 @@ function MedhaSamman() {
     <div className="relative mt-4 flex w-full items-center justify-evenly rounded-xl bg-[#e7c91ce8] p-8 max-md:flex-col">
       <img className="w-1/8 max-md:w-2/3" src="/Medha-logo.png"></img>
       <div className="top-6 right-72 text-lg font-bold text-black md:absolute md:self-end">
-        Click here for more updates
+        {/* Click here for more updates */}
       </div>
       <table className="max-w-[1000px] border-collapse overflow-hidden rounded-2xl border border-gray-300 bg-white shadow-lg md:w-[90vw]">
         <tbody>
