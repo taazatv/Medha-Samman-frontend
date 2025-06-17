@@ -43,7 +43,7 @@ function MedhaData() {
       try {
         setIsLoading(true);
         const res = await axios.get(
-         "http://localhost:8000/api/schools",
+         import.meta.env.VITE_BACKEND_URL + "/api/schools",
           {
             params: {
               city: city.toLowerCase(),
