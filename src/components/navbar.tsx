@@ -52,9 +52,7 @@ export default function Navbar() {
       </div>
 
       <div className="[&_*]:hover:text-primary flex items-center gap-8 text-xl font-semibold [&_*]:not-hover:text-white">
-        <a className="max-md:hidden" href="#gallery">
-          Gallery
-        </a>
+       <Link to="/medha-gallery">Gallery</Link>
         <Link to="/faqs">FAQs</Link>
         <Drawer>
           <DrawerTrigger className="cursor-pointer text-white">

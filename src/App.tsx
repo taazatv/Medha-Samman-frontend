@@ -6,6 +6,7 @@ import Events from "./components/events";
 import Gallery from "@/components/gallery";
 import MedhaData from "./components/MedhaData"; //
 import Faqs from "./components/Faqs";
+import MedhaGallery from "./components/MedhaGallery";
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
 
           <Route path="/:city/:classType" element={<MedhaData />} />
           <Route path="/faqs" element={<Faqs />} />
+          <Route path="/medha-gallery" element={<MedhaGallery/>} />
+
           {/* <Route path="/gallary/:classType" element={<MedhaData />} /> */}
         </Routes>
       </div>{" "}

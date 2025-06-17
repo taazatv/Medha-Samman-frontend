@@ -42,16 +42,13 @@ function MedhaData() {
     const fetchSuggestions = async () => {
       try {
         setIsLoading(true);
-        const res = await axios.get(
-         import.meta.env.VITE_BACKEND_URL + "/api/schools",
-          {
-            params: {
-              city: city.toLowerCase(),
-              classType: classType.replace("class-", ""),
-              query: search,
-            },
+        const res = await axios.get(import.meta.env.VITE_BACKEND_URL + "/api/schools", {
+          params: {
+            city: city.toLowerCase(),
+            classType: classType.replace("class-", ""),
+            query: search,
           },
-        );
+        });
         setSuggestions(res.data);
       } catch (err) {
         console.error("Error fetching suggestions:", err);
@@ -65,6 +62,26 @@ function MedhaData() {
     return () => clearTimeout(debounceTimer);
   }, [search, city, classType, hasSearched, selectedSchool]);
 
+  const handleInputFocus = async () => {
+    if (selectedSchool || hasSearched || suggestions.length > 0) return;
+
+    try {
+      setIsLoading(true);
+      const res = await axios.get(import.meta.env.VITE_BACKEND_URL + "/api/fetchAllSchools", {
+        params: {
+          city: city.toLowerCase(),
+          classType: classType.replace("class-", ""),
+        },
+      });
+      setSuggestions(res.data);
+    } catch (err) {
+      console.error("Error fetching all schools:", err);
+      setSuggestions([]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const handleSearch = async () => {
     if (!search.trim()) {
       setError("Please enter a school name");
@@ -74,16 +91,13 @@ function MedhaData() {
 
     try {
       setIsLoading(true);
-      const res = await axios.get(
-         import.meta.env.VITE_BACKEND_URL + "/api/search",
-        {
-          params: {
-            city: city.toLowerCase(),
-            classType: classType.replace("class-", ""),
-            school: search.trim(),
-          },
+      const res = await axios.get(import.meta.env.VITE_BACKEND_URL + "/api/search", {
+        params: {
+          city: city.toLowerCase(),
+          classType: classType.replace("class-", ""),
+          school: search.trim(),
         },
-      );
+      });
 
       if (res.data.length === 0) {
         setError(`No results found for ${search.trim()}`);
@@ -158,6 +172,7 @@ function MedhaData() {
                     setSearch(e.target.value);
                     setError("");
                   }}
+                  onFocus={handleInputFocus}
                   className="w-full rounded-lg border border-gray-950 p-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
                 />
 
@@ -226,7 +241,7 @@ function MedhaData() {
             </table>
 
             <div className="mt-4 text-center font-bold text-red-600">
-              NOTE: IF THERE IS ANY DESCRIPENCY PLEASE MAIL TO
+              NOTE: IF THERE IS ANY DISCREPANCY PLEASE MAIL TO
               events@taazatv.com.
             </div>
 
