@@ -35,7 +35,7 @@ const faqs: FAQ[] = [
   },
   {
     question: "Can my parents or guests come with me?",
-    answer: "Sure. Any 3 people can come with the student.",
+    answer: "Sure. Any 2 people can come with the student.",
   },
   {
     question: "Do we need to come in school uniform?",
