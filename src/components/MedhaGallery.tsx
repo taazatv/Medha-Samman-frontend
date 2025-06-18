@@ -1,7 +1,7 @@
 
 function MedhaGallery() {
   return (
-    <div>Working on it..........</div>
+    <div>Coming Soon....</div>
   )
 }
 
