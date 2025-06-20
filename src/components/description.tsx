@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import video from "@/assets/video.mp4";
 import Tickers from "./tickers";
 import MedhaSamman from "./MedhaSamman";
