@@ -1,7 +1,7 @@
-
+import Gallery from "./gallery"
 function MedhaGallery() {
   return (
-    <div>Coming Soon....</div>
+    <div><Gallery/></div>
   )
 }
 
