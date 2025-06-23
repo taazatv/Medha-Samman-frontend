@@ -1,0 +1,8 @@
+$folderPath = Get-Location
+$files = Get-ChildItem "$folderPath" -Filter *.jpg | Sort-Object Name
+$count = 1
+foreach ($file in $files) {
+    $newName = "$count.jpg"
+    Rename-Item -Path $file.FullName -NewName $newName
+    $count++
+}
