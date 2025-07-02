@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./navbar";
 import Footer from "./footer";
-import Form from "./Form";
+import Faq from "./Faqs"
 
 interface StudentData {
   schoolName: string;
@@ -42,13 +42,16 @@ function MedhaData() {
     const fetchSuggestions = async () => {
       try {
         setIsLoading(true);
-        const res = await axios.get(import.meta.env.VITE_BACKEND_URL + "/api/schools", {
-          params: {
-            city: city.toLowerCase(),
-            classType: classType.replace("class-", ""),
-            query: search,
-          },
-        });
+        const res = await axios.get(
+          // "http://localhost:8000/api/schools",
+          import.meta.env.VITE_BACKEND_URL + "/api/schools", 
+          {
+            params: {
+              city: city.toLowerCase(),
+              classType: classType.replace("class-", ""),
+              query: search,
+            },
+          });
         setSuggestions(res.data);
       } catch (err) {
         console.error("Error fetching suggestions:", err);
@@ -67,12 +70,15 @@ function MedhaData() {
 
     try {
       setIsLoading(true);
-      const res = await axios.get(import.meta.env.VITE_BACKEND_URL + "/api/fetchAllSchools", {
-        params: {
-          city: city.toLowerCase(),
-          classType: classType.replace("class-", ""),
-        },
-      });
+      const res = await axios.get(
+        // "http://localhost:8000/api/fetchAllSchools",
+        import.meta.env.VITE_BACKEND_URL + "/api/fetchAllSchools", 
+        {
+          params: {
+            city: city.toLowerCase(),
+            classType: classType.replace("class-", ""),
+          },
+        });
       setSuggestions(res.data);
     } catch (err) {
       console.error("Error fetching all schools:", err);
@@ -91,13 +97,16 @@ function MedhaData() {
 
     try {
       setIsLoading(true);
-      const res = await axios.get(import.meta.env.VITE_BACKEND_URL + "/api/search", {
-        params: {
-          city: city.toLowerCase(),
-          classType: classType.replace("class-", ""),
-          school: search.trim(),
-        },
-      });
+      const res = await axios.get(
+        // "http://localhost:8000/api/search",
+        import.meta.env.VITE_BACKEND_URL + "/api/search", 
+        {
+          params: {
+            city: city.toLowerCase(),
+            classType: classType.replace("class-", ""),
+            school: search.trim(),
+          },
+        });
 
       if (res.data.length === 0) {
         setError(`No results found for ${search.trim()}`);
@@ -244,8 +253,19 @@ function MedhaData() {
               NOTE: IF THERE IS ANY DISCREPANCY PLEASE MAIL TO
               events@taazatv.com.
             </div>
+            <div className="mt-4 text-center">
+              <a
+                href="/form"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-indigo-700 font-semibold underline hover:text-indigo-900 transition-colors"
+              >
+                Grievance Form
+              </a>
+            </div>
 
-            <Form />
+
+            <Faq />
           </div>
         ) : (
           hasSearched &&

@@ -1,6 +1,5 @@
 import { useState } from "react";
-import Footer from "./footer";
-import Navbar from "./navbar";
+
 
 interface FAQ {
   question: string;
@@ -65,40 +64,25 @@ const faqs: FAQ[] = [
 ];
 
 function Faqs() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 px-4 sm:px-6 md:px-8">
-      <Navbar></Navbar>
       <div className="w-full max-w-3xl rounded-2xl bg-white p-5 shadow-xl sm:p-8">
         <h2 className="mb-6 text-center text-2xl font-bold text-indigo-700 sm:mb-8 sm:text-3xl">
-          Medha Samman FAQs
+           Frequently Asked Questions
         </h2>
-        <div className="space-y-4">
+        <div className="space-y-6">
           {faqs.map((faq, index) => (
-            <div key={index} className="border-b border-gray-200">
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="flex w-full items-center justify-between py-3 text-left text-sm font-semibold text-gray-800 hover:text-indigo-600 focus:outline-none sm:py-4 sm:text-base"
-              >
-                <span>{faq.question}</span>
-                <span className="text-indigo-600">
-                  {openIndex === index ? "-" : "+"}
-                </span>
-              </button>
-              {openIndex === index && (
-                <div className="animate-fade-in pb-4 text-sm text-gray-600 sm:text-base">
-                  {faq.answer}
-                </div>
-              )}
+            <div key={index} className="border-b border-gray-200 pb-4">
+              <div className="text-base font-bold text-black sm:text-lg">
+                {faq.question}
+              </div>
+              <div className="mt-2 text-sm text-black sm:text-base">
+                {faq.answer}
+              </div>
             </div>
           ))}
         </div>
-        <p className="mt-6 text-center text-sm text-gray-600 sm:text-base">
+        <p className="mt-8 text-center text-sm text-gray-600 sm:text-base">
           For further queries, please send a WhatsApp to{" "}
           <a
             href="https://wa.me/9831669987"
@@ -118,7 +102,6 @@ function Faqs() {
           registration time.
         </p>
       </div>
-      <Footer />
     </div>
   );
 }

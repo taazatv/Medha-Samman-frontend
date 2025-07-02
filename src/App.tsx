@@ -8,11 +8,12 @@ import MedhaData from "./components/MedhaData"; //
 import Faqs from "./components/Faqs";
 import MedhaGallery from "./components/MedhaGallery";
 import Gallery_Kolkata_12 from "./components/Gallery_Kolkata_12";
+import Form from "./components/Form"
 
 function App() {
   return (
     <>
-      <div className="flex min-h-svh flex-col items-center overflow-x-hidden">
+      <div className="">
         <Routes>
           <Route
             path="/"
@@ -29,8 +30,10 @@ function App() {
 
           <Route path="/:city/:classType" element={<MedhaData />} />
           <Route path="/faqs" element={<Faqs />} />
-          <Route path="/medha-gallery" element={<MedhaGallery/>} />
-          <Route path="/gallery-kolkata-12" element={<Gallery_Kolkata_12/>} />
+          <Route path="/medha-gallery" element={<MedhaGallery />} />
+          <Route path="/gallery-kolkata-12" element={<Gallery_Kolkata_12 />} />
+          <Route path="/form" element={<Form />} />
+
 
 
           {/* <Route path="/gallary/:classType" element={<MedhaData />} /> */}
