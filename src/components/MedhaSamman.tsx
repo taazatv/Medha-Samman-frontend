@@ -15,7 +15,7 @@ function MedhaSamman() {
             <td className="border border-gray-300 p-5 text-center text-base">
               <Link
                 to="/kolkata/class-10"
-                className="font-semibold text-blue-600 hover:underline"
+                className="zoom-animation text-lg font-semibold text-red-600"
               >
                 Kolkata
               </Link>
@@ -37,7 +37,7 @@ function MedhaSamman() {
             <td className="border border-gray-300 p-5 text-center text-base">
               <Link
                 to="/kolkata/class-12"
-                className="zoom-animation font-semibold text-lg text-red-600"
+                className="font-semibold text-blue-600 hover:underline"
               >
                 Kolkata
               </Link>
