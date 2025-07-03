@@ -4,6 +4,8 @@ import axios from "axios";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import Faq from "./Faqs"
+import Tickers from "./tickers";
+
 
 interface StudentData {
   schoolName: string;
@@ -146,6 +148,7 @@ function MedhaData() {
   return (
     <div id="MedhaData">
       <Navbar />
+      <Tickers/>
       <div className="mx-auto min-h-screen max-w-4xl p-6">
         <h1 className="mb-6 text-center text-4xl font-bold uppercase">
           Medha Samman

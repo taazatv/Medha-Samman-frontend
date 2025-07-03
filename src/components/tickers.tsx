@@ -34,7 +34,7 @@ export default function Tickers() {
       easing={"linear"}
       delay={0}
       reverse={true}
-      className="relative w-full self-end bg-[#c21256] py-2"
+      className="relative w-full self-end bg-[#b8eb12] py-2"
     >
       {sponsors.map((sponsor, i) => (
         <div key={i} className="w-max px-4 font-bold text-black">

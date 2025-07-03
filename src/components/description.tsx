@@ -1,5 +1,4 @@
 import video from "@/assets/video.mp4";
-import Tickers from "./tickers";
 import MedhaSamman from "./MedhaSamman";
 
 const schoolNames = [
@@ -100,7 +99,7 @@ export default function Description() {
         {/* @ts-ignore */}
       </marquee>
 
-      <Tickers></Tickers>
+      
       <div className="left-content flex flex-col gap-8">
         {/* <hr className="border-primary w-16 border-t-4" /> */}
         {/* <div className="line w-full text-4xl/tight font-extrabold text-neutral-900 md:text-6xl/tight"> */}

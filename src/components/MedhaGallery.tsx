@@ -2,27 +2,27 @@ import EventCard, { EventCardProps } from "./MedhaEventsCard";
 
 const eventProps: EventCardProps[] = [
   {
-    imgUrl: "/medha.jpg",
+    imgUrl: "/kolkata_10.png",
     date: "JUNE - JULY 2025",
     location:"Kolkata",
     title: "MEDHA SAMMAN-CLASS X",
-    description: "This prestigious event is dedicated to recognizing and honoring the exceptional academic achievements of young minds. With a perfect blend of tradition and contemporary excellence, Medha Samman promises to be an unforgettable celebration of brilliance and intellectual prowess. Already in its 15th year – Medha Samman reaches to 100+ schools and more than 20,000 toppers of the city have been honored.",
+    description: "Coming Soon , Pictures will be visible from 13th July 2025",
     link:"/"
   },
   {
-    imgUrl: "/youngotsav.png",
-    date: "MARCH 2026",
+    imgUrl: "/kolkata_12.png",
+    date: "21 JUNE 2025",
     location:"Kolkata",
     title: "MEDHA SAMMAN-CLASS XII",
-    description: "Youngotsav 2025 united 1,00,000+ students across 17 colleges in Kolkata. From electrifying talent hunts to thrilling interactive brand experiences, it showcased the vibrant youth culture like never before! Televised on Taaza TV, this one-of-a-kind festival gave students a national platform to shine.",
+    description: "",
     link: "/gallery-kolkata-12",
   },
   {
-    imgUrl: "/ladiessummercamp.png",
-    date: "JUNE 2025",
+    imgUrl: "/ranchi_12_10_.png",
+    date: "JULY 2025",
     location:"Ranchi",
     title: "MEDHA SAMMAN-CLASS X & XII",
-    description: "Taaza TV presents Ladies Summer Camp 2025. A high-engagement, emotion-led platform curated for 2,000+ women across 10 women's clubs & sanstha's in Kolkata & Howrah. Summer Camp 2025 idea uses the fun and community spirit of a summer camp to showcase the beauty and confidence of women.",
+    description: "Coming Soon , Pictures will be visible from 21st July 2025",
     link:"/"
 
   
