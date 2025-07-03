@@ -1,27 +1,32 @@
 import { HorizontalTicker } from "@/components/horizontal-ticker";
 
 export default function Tickers() {
-  // const sponsors = [
-  //   "/sponsors/snakker.png",
-  //   "/sponsors/sah.png",
-  //   "/sponsors/oshea-herbals.png",
-  //   "/sponsors/royal-enfield.jpg",
-  //   "/sponsors/win-pens.png",
-  //   "/sponsors/wild-stone.png",
-  //   "/sponsors/bhagwati.png",
-  //   "/sponsors/impakto.avif",
-  //   "/sponsors/nicco-park.jpg",
+  const sponsors = [
+      "/sponsors/Aakash_Logo.png",
+    "/sponsors/Bhawanipur_Logo.png",
+    "/sponsors/Biswa_Bangla_Logo.png",
+    "/sponsors/iLead_Logo.png",
+    "/sponsors/JIS_Logo.png",
+    "/sponsors/LNB_Logo.png",
+    "/sponsors/Medha_Samman_Logo.png",
+    "/sponsors/Natural_Logo.png",
+    "/sponsors/Pentonic_Logo.png",
+    "/sponsors/RG_Logo.png",
+    "/sponsors/innxt.jpg"
+   ,
 
-  //   "/sponsors/snakker.png",
-  //   "/sponsors/sah.png",
-  //   "/sponsors/oshea-herbals.png",
-  //   "/sponsors/royal-enfield.jpg",
-  //   "/sponsors/win-pens.png",
-  //   "/sponsors/wild-stone.png",
-  //   "/sponsors/bhagwati.png",
-  //   "/sponsors/impakto.avif",
-  //   "/sponsors/nicco-park.jpg",
-  // PHIRSE TICKER ADD  KRNE KE LIYE COMMNT OUT KARE OR YE LINE KO BHI HATE DE ];
+    "/sponsors/Aakash_Logo.png",
+    "/sponsors/Bhawanipur_Logo.png",
+    "/sponsors/Biswa_Bangla_Logo.png",
+    "/sponsors/iLead_Logo.png",
+    "/sponsors/JIS_Logo.png",
+    "/sponsors/LNB_Logo.png",
+    "/sponsors/Medha_Samman_Logo.png",
+    "/sponsors/Natural_Logo.png",
+    "/sponsors/Pentonic_Logo.png",
+    "/sponsors/RG_Logo.png",
+    "/sponsors/innxt.jpg"
+ ];
 
   return (
     <HorizontalTicker
@@ -31,11 +36,11 @@ export default function Tickers() {
       reverse={true}
       className="relative w-full self-end bg-[#c21256] py-2"
     >
-      {/* {sponsors.map((sponsor, i) => (
+      {sponsors.map((sponsor, i) => (
         <div key={i} className="w-max px-4 font-bold text-black">
           <img className="h-12" src={sponsor} />
         </div>
-      ))} PHIRSE TICKER ADD  KRNE KE LIYE COMMNT OUT KARE OR YE LINE KO BHI HATE DE */}
+      ))}
     </HorizontalTicker>
   );
 }
