@@ -24,7 +24,7 @@ const faqs: FAQ[] = [
   {
     question: "When do we need to come?",
     answer:
-      "The Kolkata event for Class 12 is on 21 June 2025 at Dhanadhanyo Main Auditorium, Alipore, Kolkata-700027. The Kolkata event for Class 10 is on 12 July 2025 at Dhanadhanyo Auditorium. The Ranchi event for Class 10 & 12 is on 28 June 2025 at Aryabhatta Auditorium. You need to report at the time mentioned on call. For any issues, you can WhatsApp 9831669987 (WHATSAPP ONLY).",
+      " The Kolkata event for Class 10 is on 12 July 2025 at Dhanadhanyo Auditorium. You need to report at the time mentioned on call. For any issues, you can WhatsApp 9831669987 (WHATSAPP ONLY).",
   },
   {
     question: "Do we need to carry any documents?",
