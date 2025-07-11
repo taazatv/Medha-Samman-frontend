@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ReactNode, useState } from "react";
 import { Button } from "./ui/button";
 import { faX } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from 'react-router-dom';  // Import useNavigate from react-router-dom
 
 export type EventCardProps = {
   imgUrl: string;
@@ -27,6 +28,15 @@ export default function EventCard({
   children,
 }: EventCardProps) {
   const [showDetails, setShowDetails] = useState(false);
+  const navigate = useNavigate();  // Initialize navigate hook
+
+  const handleClick = () => {
+    if (link) {
+      navigate(link);  // Use navigate() for internal route navigation
+    } else if (details) {
+      setShowDetails(true);  // Show details overlay
+    }
+  };
 
   return (
     <div className="relative flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-md transition-all hover:shadow-lg">
@@ -68,10 +78,7 @@ export default function EventCard({
         <button
           disabled={!(link || children || details)}
           className="border-secondary text-secondary hover:bg-secondary mt-auto w-full rounded-full border-2 bg-white px-6 py-3 text-sm font-bold tracking-widest uppercase transition-colors hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
-          onClick={() => {
-            if (link) window.location.href = link; // Navigate to the link in the same tab
-            else if (details) setShowDetails(true);
-          }}
+          onClick={handleClick}  // Use handleClick instead of directly modifying window.location
         >
           {link || children || details ? "Gallery" : "Coming Soon..."}
         </button>
