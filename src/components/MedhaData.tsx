@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./navbar";
 import Footer from "./footer";
@@ -45,7 +45,7 @@ function MedhaData() {
       try {
         setIsLoading(true);
         const res = await axios.get(
-          import.meta.env.VITE_BACKEND_URL + "/api/schools", 
+          import.meta.env.VITE_BACKEND_URL + "/api/schools",
           {
             params: {
               city: city.toLowerCase(),
@@ -72,7 +72,7 @@ function MedhaData() {
     try {
       setIsLoading(true);
       const res = await axios.get(
-        import.meta.env.VITE_BACKEND_URL + "/api/fetchAllSchools", 
+        import.meta.env.VITE_BACKEND_URL + "/api/fetchAllSchools",
         {
           params: {
             city: city.toLowerCase(),
@@ -98,7 +98,7 @@ function MedhaData() {
     try {
       setIsLoading(true);
       const res = await axios.get(
-        import.meta.env.VITE_BACKEND_URL + "/api/search", 
+        import.meta.env.VITE_BACKEND_URL + "/api/search",
         {
           params: {
             city: city.toLowerCase(),
@@ -148,7 +148,7 @@ function MedhaData() {
   return (
     <div id="MedhaData">
       <Navbar />
-      <Tickers/>
+      <Tickers />
       <div className="mx-auto min-h-screen max-w-4xl p-6">
         <h1 className="mb-6 text-center text-4xl font-bold uppercase">
           Medha Samman
@@ -254,14 +254,12 @@ function MedhaData() {
               events@taazatv.com.
             </div>
             <div className="mt-4 text-center">
-              <a
-                href="/form"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/form"
                 className="text-indigo-700 font-semibold underline hover:text-indigo-900 transition-colors"
               >
                 Grievance Form
-              </a>
+              </Link>
             </div>
 
 

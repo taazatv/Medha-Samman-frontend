@@ -69,7 +69,7 @@ export default function EventCard({
           disabled={!(link || children || details)}
           className="border-secondary text-secondary hover:bg-secondary mt-auto w-full rounded-full border-2 bg-white px-6 py-3 text-sm font-bold tracking-widest uppercase transition-colors hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
           onClick={() => {
-            if (link) window.open(link, "_blank");
+            if (link) window.location.href = link; // Navigate to the link in the same tab
             else if (details) setShowDetails(true);
           }}
         >
