@@ -6,8 +6,8 @@ const eventProps: EventCardProps[] = [
     date: "JUNE - JULY 2025",
     location:"Kolkata",
     title: "MEDHA SAMMAN-CLASS X",
-    description: "Coming Soon , Pictures will be visible from 13th July 2025",
-    link:"/"
+    description: "",
+    link:"/gallery-kolkata-10"
   },
   {
     imgUrl: "/kolkata_12.png",
