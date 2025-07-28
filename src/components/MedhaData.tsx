@@ -161,7 +161,7 @@ function MedhaData() {
               ? classType === "class-12"
                 ? "21st JUNE 2025"
                 : "12th JULY 2025"
-              : "28th JUNE 2025"}{" "}
+              : "3rd AUGUST 2025"}{" "}
             at{" "}
             {city === "kolkata"
               ? "DHONO DHANYO AUDITORIUM"
