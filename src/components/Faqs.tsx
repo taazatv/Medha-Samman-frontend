@@ -24,7 +24,7 @@ const faqs: FAQ[] = [
   {
     question: "When do we need to come?",
     answer:
-      " The Kolkata event for Class 10 is on 12 July 2025 at Dhanadhanyo Auditorium. You need to report at the time mentioned on call. For any issues, you can WhatsApp 9831669987 (WHATSAPP ONLY).",
+      " The Rachi event for Class 10 is on 3rd August 2025 at Arya Bhatt Auditorium,Ranchi. You need to report at the time mentioned on call. For any issues, you can WhatsApp 9831669987 (WHATSAPP ONLY).",
   },
   {
     question: "Do we need to carry any documents?",
@@ -33,7 +33,7 @@ const faqs: FAQ[] = [
   },
   {
     question: "Can my parents or guests come with me?",
-    answer: "Sure. Any 2 people can come with the student.",
+    answer: "Sure. Any 1 people can come with the student.",
   },
   {
     question: "Do we need to come in school uniform?",
