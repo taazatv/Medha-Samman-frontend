@@ -23,7 +23,7 @@ const eventProps: EventCardProps[] = [
     location:"Ranchi",
     title: "MEDHA SAMMAN-CLASS X & XII",
     description: "Coming Soon , Pictures will be visible from 21st July 2025",
-    link:"/"
+    link:"/gallery-rachi",
 
   
   },
