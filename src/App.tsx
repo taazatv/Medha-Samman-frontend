@@ -9,6 +9,7 @@ import Faqs from "./components/Faqs";
 import MedhaGallery from "./components/MedhaGallery";
 import Gallery_Kolkata_12 from "./components/Gallery_Kolkata_12";
 import Gallery_Kolkata_10 from "./components/Gallery_Kolkata_10";
+import Gallery_rachi from "./components/Gallery_ranchi";
 import Form from "./components/Form"
 
 function App() {
