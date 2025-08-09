@@ -19,7 +19,7 @@ const eventProps: EventCardProps[] = [
   },
   {
     imgUrl: "/ranchi_12_10_.png",
-    date: "JULY 2025",
+    date: "3rd August 2025",
     location:"Ranchi",
     title: "MEDHA SAMMAN-CLASS X & XII",
     description: "",
