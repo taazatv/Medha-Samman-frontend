@@ -22,7 +22,7 @@ const eventProps: EventCardProps[] = [
     date: "JULY 2025",
     location:"Ranchi",
     title: "MEDHA SAMMAN-CLASS X & XII",
-    description: "Coming Soon , Pictures will be visible from 21st July 2025",
+    description: "",
     link:"/gallery-rachi",
 
   
