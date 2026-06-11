@@ -1,8 +1,10 @@
 import { faCalendarCheck } from "@fortawesome/free-regular-svg-icons";
+import {
+  faArrowRight,
+  faX,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ReactNode, useState } from "react";
-import { Button } from "./ui/button";
-import { faX } from "@fortawesome/free-solid-svg-icons";
 
 export type EventCardProps = {
   imgUrl: string;
@@ -26,48 +28,79 @@ export default function EventCard({
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <div className="event-card relative h-full space-y-4 border-amber-950 max-sm:border-b-4 sm:min-w-sm">
-      <img className="aspect-[3/2] w-full object-fill" src={imgUrl} />
-      <div className="date mt-8 flex items-center gap-2 text-sm font-bold uppercase">
-        <FontAwesomeIcon icon={faCalendarCheck} className="text-secondary" />
-        <div className="text-xs tracking-widest text-neutral-600">{date}</div>
-      </div>
-      <div className="title text-2xl/tight font-bold">{title}</div>
-      <div className="desciption h-[12rem] text-sm/snug text-neutral-600">
-        {description}
-      </div>
-      <button
-        disabled={!(link || children || details)}
-        className="know-more not-disabled:hover:bg-secondary text-secondary border-secondary flex w-full justify-center rounded-full border-2 bg-white py-4 text-sm font-bold tracking-widest uppercase not-disabled:hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
-        onClick={() => {
-          if (link) window.location.assign(link);
-          else if (details) setShowDetails(true);
-        }}
-      >
-        {link || children || details ? "Know More" : "Coming Soon..."}
-      </button>
+    <>
+      <div className="group min-w-[360px] overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:border-blue-400/50 hover:shadow-[0_20px_60px_rgba(59,130,246,0.25)]">
+        {/* Image */}
 
-      <div
-        className={`absolute top-0 left-0 ${showDetails ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-16 opacity-0"} h-full w-full bg-white/75 backdrop-blur-sm`}
-      >
-        <Button
-          variant={"ghost"}
-          size={"icon"}
-          className="absolute top-2 right-2"
-          onClick={() => {
-            setShowDetails(false);
-          }}
-        >
-          <FontAwesomeIcon icon={faX} />
-        </Button>
-        {children ? (
-          children
-        ) : (
-          <div className="flex h-full w-full items-center justify-center p-8 text-center font-medium text-neutral-600">
-            {details}
+        <div className="overflow-hidden">
+          <img
+            src={imgUrl}
+            className="h-60 w-full object-cover transition duration-700 group-hover:scale-110"
+          />
+        </div>
+
+        {/* Content */}
+
+        <div className="p-6">
+          <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/10 px-4 py-2 text-xs font-semibold tracking-widest text-blue-300">
+            <FontAwesomeIcon icon={faCalendarCheck} />
+            {date}
           </div>
-        )}
+
+          <h3 className="mt-5 text-2xl font-bold text-white">
+            {title}
+          </h3>
+
+          <p className="mt-4 line-clamp-5 text-sm leading-7 text-slate-400">
+            {description}
+          </p>
+
+          <button
+            disabled={!(link || details || children)}
+            onClick={() => {
+              if (link) {
+                window.open(link, "_blank");
+              } else {
+                setShowDetails(true);
+              }
+            }}
+            className="mt-8 flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-6 py-4 font-semibold text-white transition duration-300 hover:scale-[1.02]"
+          >
+            Know More
+            <FontAwesomeIcon
+              icon={faArrowRight}
+              className="transition group-hover:translate-x-1"
+            />
+          </button>
+        </div>
       </div>
-    </div>
+
+      {/* Modal */}
+
+      {showDetails && (
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 p-6 backdrop-blur-sm">
+          <div className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-3xl border border-white/10 bg-slate-900 p-10 text-white shadow-2xl">
+            <button
+              onClick={() => setShowDetails(false)}
+              className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-red-500"
+            >
+              <FontAwesomeIcon icon={faX} />
+            </button>
+
+            <h2 className="mb-6 text-3xl font-bold">
+              {title}
+            </h2>
+
+            {children ? (
+              children
+            ) : (
+              <p className="leading-8 text-slate-300">
+                {details}
+              </p>
+            )}
+          </div>
+        </div>
+      )}
+    </>
   );
 }

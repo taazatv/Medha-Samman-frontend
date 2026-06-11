@@ -1,13 +1,255 @@
-@keyframes zoomInOut {
-  0%, 100% {
-    transform: scale(1);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.medha-section {
+  width: 100%;
+  padding: 30px 20px;
+}
+
+.medha-container {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    #06152f,
+    #0b2f73,
+    #1565c0
+  );
+
+  border-radius: 30px;
+
+  padding: 50px;
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.2);
+}
+
+/* Floating Glows */
+
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.glow-1 {
+  width: 320px;
+  height: 320px;
+
+  top: -120px;
+  right: -120px;
+
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.glow-2 {
+  width: 280px;
+  height: 280px;
+
+  bottom: -100px;
+  left: -100px;
+
+  background: rgba(0, 255, 255, 0.15);
+}
+
+/* Header */
+
+.medha-header {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  margin-bottom: 40px;
+}
+
+.medha-logo {
+  width: 180px;
+  height: auto;
+
+  object-fit: contain;
+
+  filter: drop-shadow(
+    0 12px 25px rgba(0, 0, 0, 0.25)
+  );
+}
+
+.header-content {
+  color: white;
+}
+
+.badge {
+  display: inline-block;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  padding: 8px 18px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  margin-bottom: 15px;
+}
+
+.header-content h2 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.header-content p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Cards */
+
+.events-grid {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(260px, 1fr));
+
+  gap: 20px;
+}
+
+.event-card {
+  position: relative;
+
+  text-decoration: none;
+  color: white;
+
+  padding: 28px;
+
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  transition: all 0.35s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-8px);
+
+  background: rgba(255, 255, 255, 0.14);
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.event-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+
+  margin-bottom: 10px;
+}
+
+.event-card p {
+  color: rgba(255, 255, 255, 0.85);
+
+  font-size: 15px;
+}
+
+/* Live Card */
+
+.live-card {
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #3b82f6
+  );
+
+  border: none;
+
+  animation: pulseGlow 2s infinite;
+}
+
+.live-badge {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  background: white;
+  color: #2563eb;
+
+  padding: 5px 12px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow:
+      0 0 0 rgba(59, 130, 246, 0.4);
   }
+
   50% {
-    transform: scale(1.15);
+    box-shadow:
+      0 0 35px rgba(59, 130, 246, 0.8);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 rgba(59, 130, 246, 0.4);
   }
 }
 
-.zoom-animation {
-  animation: zoomInOut 1.6s ease-in-out infinite;
+.soon {
   display: inline-block;
+
+  margin-top: 15px;
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .medha-container {
+    padding: 25px;
+  }
+
+  .medha-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .medha-logo {
+    width: 130px;
+  }
+
+  .header-content h2 {
+    font-size: 30px;
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
 }

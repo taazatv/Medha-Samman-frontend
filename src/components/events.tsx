@@ -3,65 +3,53 @@ import EventCard, { EventCardProps } from "./event-card";
 const eventProps: EventCardProps[] = [
   {
     imgUrl: "/dandiya.jpg",
-    date: "30th Sep to 1 Oct, 2025",
+    date: "SEPTEMBER 2026",
     title: "TAAZA DANDIYA",
     description:
-      "It’s the largest and most prestigious Dandiya and Garba celebration in Eastern India. Over the years, it has earned a reputation for delivering high-energy performances, cultural inclusivity, and memorable experiences. With record-breaking crowd of over 50,000 participants each year, entire Kolkata is a part of this grand festivity.",
-    link: "https://dandiya.taazatv.com/",
+      "Eastern India's largest Garba & Dandiya celebration attracting over 50,000 participants every year.",
+    link: "https://taazadandiya.com/",
   },
   {
     imgUrl: "/kwizdom.png",
-    date: "JULY 2025",
+    date: "JULY 2026",
     title: "KWIZDOM 3.0",
     description:
-      "Taaza TV has officially started its flagship quiz competition, KWIZDOM aimed at fostering academic excellence and national pride among students in Kolkata. This unique initiative was started with GRSE (Ministry of Defence) and now reached to 115 schools of Kolkata, where in each student of a class has to give this examination in the school by compulsion. With this activity we reach 50,000 students each year.",
-    link: "https://kwizdom.taazatv.com/",
+      "Academic excellence platform reaching 115 schools and 50,000 students annually.",
+    link: "https://kwizdom.com/",
   },
   {
     imgUrl: "/medha.jpg",
-    date: "JUNE - JULY 2025",
-    title: "MEDHA SAMMAN-CLASS X ",
+    date: "JUNE - JULY 2026",
+    title: "MEDHA SAMMAN",
     description:
-      "This prestigious event is dedicated to recognizing and honoring the exceptional academic achievements of young minds. With a perfect blend of tradition and contemporary excellence, Medha Samman promises to be an unforgettable celebration of brilliance and intellectual prowess. Already in its 15th year – Medha Samman reaches to 100+ schools and more than 20,000 toppers of the city have been honored.",
+      "Recognizing academic excellence across 100+ schools and honoring over 20,000 toppers.",
     details:
-      "This prestigious event is dedicated to recognizing and honoring the exceptional academic achievements of young minds. With a perfect blend of tradition and contemporary excellence, Medha Samman promises to be an unforgettable celebration of brilliance and intellectual prowess. Already in its 15th year – Medha Samman reaches to 100+ schools and more than 20,000 toppers of the city have been honored.",
+      "This prestigious event is dedicated to recognizing and honoring exceptional academic achievements across Eastern India.",
   },
-
   {
     imgUrl: "/youngotsav.png",
     date: "MARCH 2026",
     title: "YOUNGOTSAV",
     description:
-      "Youngotsav 2025 united 1,00,000+ students across 17 colleges in Kolkata. From electrifying talent hunts to thrilling interactive brand experiences, it showcased the vibrant youth culture like never before! Televised on Taaza TV, this one-of-a-kind festival gave students a national platform to shine.",
+      "A youth festival connecting over 1,00,000 students through talent and innovation.",
     link: "https://youngotsav.com/",
   },
-
   {
     imgUrl: "/ladiessummercamp.png",
-    date: "JUNE 2025",
+    date: "JUNE 2026",
     title: "LADIES SUMMER CAMP",
     description:
-      "Taaza TV presents Ladies Summer Camp 2025. A high-engagement, emotion-led platform curated for 2,000+ women across 10 women’s clubs & sanstha’s in Kolkata & Howrah.Summer Camp 2025 idea uses the fun and community spirit of a summer camp to showcase the beauty and confidence of women. It's more than just womanhood; it's about creating an engaging and memorable experience for thousands of women.",
+      "An engaging summer platform connecting 2,000+ women across Kolkata and Howrah.",
     details:
-      "Taaza TV presents Ladies Summer Camp 2025. A high-engagement, emotion-led platform curated for 2,000+ women across 10 women’s clubs & sanstha’s in Kolkata & Howrah.Summer Camp 2025 idea uses the fun and community spirit of a summer camp to showcase the beauty and confidence of women. It's more than just womanhood; it's about creating an engaging and memorable experience for thousands of women.",
+      "A large-scale women engagement initiative celebrating confidence, talent and community.",
   },
-
-  // {
-  //   imgUrl: "/aadhiduniya.png",
-  //   date: "JUNE 2025",
-  //   title: "AADHI DUNIYA",
-  //   description:
-  //     "Aadhi Duniya by Taaza TV is a bold and insightful initiative that brings forward the unheard voices and untold stories of half the world — the women, youth, and marginalized communities that shape our society every day. This segment aims to spotlight real issues, and question the status quo with fearless journalism and authentic storytelling.",
-  //   details:
-  //     "Aadhi Duniya by Taaza TV is a bold and insightful initiative that brings forward the unheard voices and untold stories of half the world — the women, youth, and marginalized communities that shape our society every day. This segment aims to spotlight real issues, celebrate achievements, and question the status quo with fearless journalism and authentic storytelling. From social movements to everyday struggles and successes, Aadhi Duniya creates a powerful platform for dialogue, change, and empowerment. Tune in to experience stories that matter — raw, real, and relevant — only on **Taaza TV**, where every voice counts.",
-  // },
   {
     imgUrl: "/SUPER30.jpg",
-    date: "JUNE 2025",
+    date: "JUNE 2026",
     title: "SUPER 30",
     description:
-      " Marwari Education Conclave SUPER 30 At HOTEL ITC SONAR - The grand celebration of 30 Marwari students getting 99% or above marks in their board examinations.",
-    link: "https://super30.taazatv.comS/",
+      "Celebrating outstanding academic achievers scoring 99%+ in board examinations.",
+    link: "https://super30.taazatv.com/",
   },
 ];
 
@@ -69,15 +57,36 @@ export default function Events() {
   return (
     <section
       id="events"
-      className="flex w-screen flex-col items-center gap-8 px-8 py-16"
+      className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 py-24"
     >
-      <hr className="border-secondary w-16 border-t-4" />
-      <div className="mb-8 text-4xl font-bold md:text-6xl">Taazatv Events</div>
-      <div className="flex w-[80vw] justify-start gap-8 overflow-x-scroll overflow-y-hidden max-md:flex-col">
-        {eventProps.map((props, i) => (
-          <EventCard {...props} key={i} />
-        ))}
+      {/* Background Blur */}
+      <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-blue-500/10 blur-[120px]" />
+      <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-cyan-500/10 blur-[120px]" />
+
+      <div className="relative z-10 mx-auto max-w-[1700px] px-8">
+        <div className="flex flex-col items-center">
+          <div className="mb-4 h-1 w-24 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400" />
+
+          <span className="mb-3 rounded-full border border-blue-500/30 bg-blue-500/10 px-5 py-2 text-xs font-semibold uppercase tracking-[3px] text-blue-300">
+            Our Flagship Events
+          </span>
+
+          <h2 className="text-center text-5xl font-black text-white md:text-6xl">
+            TaazaTV Events
+          </h2>
+
+          <p className="mt-4 max-w-3xl text-center text-slate-400">
+            Celebrating excellence through entertainment, education,
+            youth engagement and cultural initiatives.
+          </p>
+        </div>
+
+        <div className="mt-16 flex gap-8 overflow-x-auto pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {eventProps.map((props, i) => (
+            <EventCard {...props} key={i} />
+          ))}
+        </div>
       </div>
     </section>
   );
-}                                                                                                               
+}

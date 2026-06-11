@@ -1,10 +1,13 @@
 import { faCalendarCheck } from "@fortawesome/free-regular-svg-icons";
-import { FaLocationDot } from "react-icons/fa6";
+import {
+  faArrowRight,
+  faX,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaLocationDot } from "react-icons/fa6";
 import { ReactNode, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
-import { faX } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from 'react-router-dom';  // Import useNavigate from react-router-dom
 
 export type EventCardProps = {
   imgUrl: string;
@@ -28,101 +31,115 @@ export default function EventCard({
   children,
 }: EventCardProps) {
   const [showDetails, setShowDetails] = useState(false);
-  const navigate = useNavigate();  // Initialize navigate hook
+  const navigate = useNavigate();
 
   const handleClick = () => {
     if (link) {
-      navigate(link);  // Use navigate() for internal route navigation
+      navigate(link);
     } else if (details) {
-      setShowDetails(true);  // Show details overlay
+      setShowDetails(true);
     }
   };
 
   return (
-    <div className="relative flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-md transition-all hover:shadow-lg">
-      <div className="aspect-[4/3] w-full overflow-hidden">
-        <img
-          className="h-full w-full object-cover"
-          src={imgUrl}
-          alt={title}
-          loading="lazy"
-        />
-      </div>
+    <>
+      <div className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:border-cyan-300/40 hover:bg-white/10 hover:shadow-[0_20px_60px_rgba(0,180,255,0.25)]">
 
-      <div className="flex flex-1 flex-col p-6">
-        <div className="mb-3 flex items-center gap-2">
-          <FontAwesomeIcon
-            icon={faCalendarCheck}
-            className="text-secondary h-4 w-4"
+        <div className="relative overflow-hidden">
+          <img
+            src={imgUrl}
+            alt={title}
+            className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
-          <span className="text-xs font-bold tracking-widest text-gray-600 uppercase">
-            {date}
-          </span>
-        </div>
 
-        <div className="mb-3 flex items-center gap-2">
-          <FaLocationDot />
-          <span className="text-xs font-bold tracking-widest text-gray-600 uppercase">
-            {location}
-          </span>
-        </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
-        <h3 className="mb-3 line-clamp-2 text-xl font-bold text-gray-900">
-          {title}
-        </h3>
-
-        <p className="mb-6 line-clamp-4 flex-1 text-sm text-gray-600">
-          {description}
-        </p>
-
-        <button
-          disabled={!(link || children || details)}
-          className="border-secondary text-secondary hover:bg-secondary mt-auto w-full rounded-full border-2 bg-white px-6 py-3 text-sm font-bold tracking-widest uppercase transition-colors hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
-          onClick={handleClick}  // Use handleClick instead of directly modifying window.location
-        >
-          {link || children || details ? "Gallery" : "Coming Soon..."}
-        </button>
-      </div>
-
-      {/* Details overlay */}
-      <div
-        className={`absolute inset-0 z-10 flex flex-col bg-white/95 backdrop-blur-sm transition-all duration-300 ${showDetails ? "opacity-100" : "pointer-events-none opacity-0"}`}
-      >
-        <Button
-          variant="ghost"
-          size="icon"
-          className="absolute top-4 right-4 z-20"
-          onClick={() => setShowDetails(false)}
-        >
-          <FontAwesomeIcon icon={faX} className="h-5 w-5" />
-        </Button>
-
-        <div className="flex h-full flex-col overflow-y-auto p-6">
-          <div className="mb-6 aspect-[4/3] w-full overflow-hidden rounded-lg">
-            <img
-              className="h-full w-full object-cover"
-              src={imgUrl}
-              alt={title}
-            />
+          <div className="absolute left-4 top-4 rounded-full bg-cyan-500 px-4 py-1 text-xs font-bold text-white shadow-lg">
+            EVENT
           </div>
+        </div>
 
-          <div className="mb-4 flex items-center gap-2">
+        <div className="p-6">
+
+          <div className="mb-3 flex items-center gap-2">
             <FontAwesomeIcon
               icon={faCalendarCheck}
-              className="text-secondary h-4 w-4"
+              className="text-cyan-400"
             />
-            <span className="text-xs font-bold tracking-widest text-gray-600 uppercase">
+            <span className="text-xs font-bold uppercase tracking-widest text-gray-400">
               {date}
             </span>
           </div>
 
-          <h3 className="mb-4 text-2xl font-bold text-gray-900">{title}</h3>
+          <div className="mb-4 flex items-center gap-2">
+            <FaLocationDot className="text-blue-400" />
+            <span className="text-xs font-bold uppercase tracking-widest text-gray-400">
+              {location}
+            </span>
+          </div>
 
-          <div className="prose text-gray-600">
-            {children ? children : <p>{details}</p>}
+          <h3 className="mb-3 text-xl font-bold text-white transition-colors duration-300 group-hover:text-cyan-300">
+            {title}
+          </h3>
+
+          <p className="mb-6 line-clamp-3 text-sm text-gray-300">
+            {description}
+          </p>
+
+          <button
+            disabled={!(link || details || children)}
+            onClick={handleClick}
+            className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 px-6 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_40px_rgba(0,180,255,0.45)] disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            {link || details || children
+              ? "View Gallery"
+              : "Coming Soon"}
+
+            <FontAwesomeIcon icon={faArrowRight} />
+          </button>
+        </div>
+      </div>
+
+      {/* Details Modal */}
+
+      <div
+        className={`fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm transition-all duration-300 ${
+          showDetails
+            ? "visible opacity-100"
+            : "invisible opacity-0"
+        }`}
+      >
+        <div className="relative max-h-[90vh] w-full max-w-4xl overflow-hidden rounded-3xl bg-[#071b3d]">
+
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute right-4 top-4 z-20 text-white"
+            onClick={() => setShowDetails(false)}
+          >
+            <FontAwesomeIcon icon={faX} />
+          </Button>
+
+          <div className="overflow-y-auto max-h-[90vh]">
+
+            <img
+              src={imgUrl}
+              alt={title}
+              className="h-80 w-full object-cover"
+            />
+
+            <div className="p-8">
+              <h2 className="mb-4 text-3xl font-bold text-white">
+                {title}
+              </h2>
+
+              <div className="prose prose-invert max-w-none">
+                {children ? children : <p>{details}</p>}
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

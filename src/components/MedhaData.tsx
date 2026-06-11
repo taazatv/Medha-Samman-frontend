@@ -72,7 +72,7 @@ function MedhaData() {
     try {
       setIsLoading(true);
       const res = await axios.get(
-        import.meta.env.VITE_BACKEND_URL + "/api/fetchAllSchools",
+         "https://medha-samman-backend.onrender.com/api/fetchAllSchools",
         {
           params: {
             city: city.toLowerCase(),
@@ -98,7 +98,7 @@ function MedhaData() {
     try {
       setIsLoading(true);
       const res = await axios.get(
-        import.meta.env.VITE_BACKEND_URL + "/api/search",
+        "https://medha-samman-backend.onrender.com/api/search",
         {
           params: {
             city: city.toLowerCase(),

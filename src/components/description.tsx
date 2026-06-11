@@ -13,107 +13,160 @@ const schoolNames = [
   "ASIAN INTERNATIONAL SCHOOL",
   "B.D.M. INTERNATIONAL",
   "BALIKA SIKSHA SADAN",
-  "BHAVANS GANAGBUX KANORIA VIDYAMANDIR",
   "BIRLA HIGH SCHOOL",
   "CALCUTTA BOYS' SCHOOL",
   "CALCUTTA GIRLS HIGH SCHOOL",
-  "CALCUTTA PUBLIC SCHOOL BAGUIATI",
-  "CALCUTTA PUBLIC SCHOOL BIDHAN PARK",
-  "CENTRAL MODERN SCHOOL",
   "DELHI PUBLIC SCHOOL MEGACITY",
-  "DELHI PUBLIC SCHOOLHOWRAH",
-  "DON BOSCO SCHOOL, PARK CIRCUS",
   "DPS NEWTOWN",
   "DPS RUBY PARK",
-  "FUTURE FOUNDATION SCHOOL",
-  "G D BIRLA CENTRE FOR EDUCATION",
-  "HARIYANA VIDYA MANDIR",
   "HERITAGE SCHOOL",
-  "INDUS VALLEY WORLD SCHOOL",
-  "KHALSA MODEL SENIOR SECONDARY SCHOOL",
   "LA MARTINIERE FOR GIRLS",
-  "LAKSHMIPAT SINGHANIA ACADEMY",
-  "LIONS CALCUTTA GREATER VIDYA MANDIR",
-  "LITTLE STAR HIGH SCHOOL",
-  "LORETO CONVENT ENTALLY",
   "LORETO HOUSE",
-  "M.P. BIRLA FOUNDATION HS SCHOOL",
-  "MAHADEVI BIRLA WORLD ACADEMY",
-  "MAHESHWARI BALIKA VIDYALAYA",
-  "MARWARI BALIKA VIDYALAYA",
-  "MC KEJRIWAL VIDYAPEETH",
   "MODERN HIGH SCHOOL",
-  "NATIONAL ENGLISH SCHOOL",
-  "NATIONAL ENGLISH SCHOOL,RAJARHAT",
-  "NOPANY HIGH",
-  "PRAMILA MEMORIAL ADVANCED SCHOOL",
-  "PURWANCHAL VIDYAMANDIR",
-  "SAIFEE GOLDEN JUBILEE ENGLISH PUBLIC SCHOOL",
-  "SALT LAKE POINT SCHOOL",
-  "SALT LAKE SHIKSHA NIKETAN",
-  "SHRI SIKSHAYATAN SCHOOL",
   "SOUTH CITY INTERNATIONAL",
-  "SRI SRI ACADEMY KOLKATA",
-  "ST.  JOSEPH'S  COLLEGE",
-  "ST. AGNES' CONVENT SCHOOL, HOWRAH",
-  "ST. DENIS SCHOOL",
-  "ST. PAUL'S BOARDING & DAY SCHOOL",
   "ST. XAVIERS COLLEGIATE SCHOOL",
-  "ST. XAVIER'S INSTITUTION",
-  "SUNRISE (ENG. MED.) SCHOOL",
-  "SUSHILA BIRLA GIRLS' SCHOOL",
-  "THE ARYANS SCHOOL",
-  "THE BGES SCHOOL",
-  "THE BSS SCHOOL",
-  "THE CALCUTTA ANGLO GUJARATI SCHOOL",
-  "THE FRANK ANTHONY PUB.SCHOOL",
   "THE NEWTOWN SCHOOL",
-  "UNION CHAPEL SCHOOL",
-  "XAVIER'S ENGLISH SCHOOL KONNAGAR",
   "YOUNG HORIZONS SCHOOL",
 ];
 
 export default function Description() {
   return (
-    <section
-      id="description"
-      className="relative flex w-screen flex-col items-center justify-between gap-8 p-8 max-md:flex-col"
-    >
-      <MedhaSamman></MedhaSamman>
-      <div className="right-content flex w-full justify-center self-end">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          src={video}
-          className="h-full w-full rounded-xl border-8 border-[#eec40b]"
-        />
-      </div>
-      {/* @ts-ignore */}
-      <marquee className="bg-amber-400 py-4 font-bold">
-        <span>LIST OF SCHOOLS:</span>
-        {schoolNames.map((schoolName) => (
-          <span> • {schoolName}</span>
-        ))}
-        {/* @ts-ignore */}
-      </marquee>
+    <>
+      <style>
+        {`
+          @keyframes tickerMove {
+            from {
+              transform: translateX(0);
+            }
+            to {
+              transform: translateX(-50%);
+            }
+          }
 
-      
-      <div className="left-content flex flex-col gap-8">
-        {/* <hr className="border-primary w-16 border-t-4" /> */}
-        {/* <div className="line w-full text-4xl/tight font-extrabold text-neutral-900 md:text-6xl/tight"> */}
-        {/* MEDHA SAMMAN 2025 */}
-        {/* </div> */}
-        <div className="w-full rounded-xl bg-[#ec183c] px-16 py-8 text-base font-bold text-white max-md:p-4">
-          This prestigious event is dedicated to recognizing and honoring the
-          exceptional academic achievements of young minds. With a perfect blend
-          of tradition and contemporary excellence, Medha Samman promises to be
-          an unforgettable celebration of brilliance and intellectual prowess.
-          Already in its 15th year – Medha Samman reaches to 100+ schools and
-          more than 20,000 toppers of the city have been honored.
+          @keyframes floatCard {
+            0%,100% {
+              transform: translateY(0px);
+            }
+            50% {
+              transform: translateY(-8px);
+            }
+          }
+
+          .ticker-animation {
+            animation: tickerMove 80s linear infinite;
+          }
+
+          .floating-card {
+            animation: floatCard 4s ease-in-out infinite;
+          }
+        `}
+      </style>
+
+      <section
+        id="description"
+        className="flex w-full flex-col gap-8 px-4 py-8 md:px-8"
+      >
+        <MedhaSamman />
+
+        {/* Video */}
+        <div className="overflow-hidden rounded-3xl border-4 border-amber-400 shadow-2xl">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            src={video}
+            className="w-full"
+          />
         </div>
-      </div>
-    </section>
+
+        {/* Premium School Ticker */}
+        <div className="overflow-hidden rounded-2xl border border-slate-700 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 py-5 shadow-2xl">
+          <div className="ticker-animation flex w-max hover:[animation-play-state:paused]">
+            {[...schoolNames, ...schoolNames].map(
+              (school, index) => (
+                <div
+                  key={index}
+                  className="mx-8 flex items-center whitespace-nowrap text-sm font-semibold uppercase tracking-wide text-slate-100"
+                >
+                  <span className="mr-3 h-2.5 w-2.5 rounded-full bg-amber-400 shadow-[0_0_12px_rgba(251,191,36,0.9)]" />
+                  {school}
+                </div>
+              )
+            )}
+          </div>
+        </div>
+
+        {/* Achievement Section */}
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-8 text-white shadow-2xl md:p-12">
+          {/* Decorative Elements */}
+          <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-white/5" />
+          <div className="absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-blue-500/10" />
+
+          <div className="relative z-10">
+            <span className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-amber-300 backdrop-blur-sm">
+              Celebrating Academic Excellence Since 2011
+            </span>
+
+            <h2 className="mt-5 text-4xl font-extrabold tracking-tight md:text-5xl">
+              Medha Samman
+            </h2>
+
+            <p className="mt-5 max-w-5xl text-base leading-8 text-slate-300 md:text-lg">
+              This prestigious event is dedicated to recognizing and honoring
+              the exceptional academic achievements of young minds. With a
+              perfect blend of tradition and contemporary excellence, Medha
+              Samman continues to inspire and celebrate brilliance across
+              schools while encouraging future leaders and achievers.
+            </p>
+
+            {/* Stats */}
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              <div className="floating-card rounded-2xl border border-white/10 bg-white/10 p-6 backdrop-blur-sm">
+                <div className="text-4xl font-bold text-amber-400">
+                  16+
+                </div>
+                <div className="mt-2 text-slate-300">
+                  Years of Excellence
+                </div>
+              </div>
+
+              <div
+                className="floating-card rounded-2xl border border-white/10 bg-white/10 p-6 backdrop-blur-sm"
+                style={{ animationDelay: "0.5s" }}
+              >
+                <div className="text-4xl font-bold text-amber-400">
+                  100+
+                </div>
+                <div className="mt-2 text-slate-300">
+                  Participating Schools
+                </div>
+              </div>
+
+              <div
+                className="floating-card rounded-2xl border border-white/10 bg-white/10 p-6 backdrop-blur-sm"
+                style={{ animationDelay: "1s" }}
+              >
+                <div className="text-4xl font-bold text-amber-400">
+                  20,000+
+                </div>
+                <div className="mt-2 text-slate-300">
+                  Toppers Honoured
+                </div>
+              </div>
+            </div>
+
+            {/* Highlight Banner */}
+            <div className="mt-10 rounded-2xl border border-amber-400/20 bg-gradient-to-r from-amber-500/10 via-yellow-500/10 to-amber-500/10 p-5 backdrop-blur-sm">
+              <p className="text-center text-sm font-medium text-slate-200 md:text-base">
+                🏆 One of Eastern India's most prestigious academic recognition
+                programs, connecting top-performing students from leading
+                schools across the region.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

@@ -1,59 +1,118 @@
 import { Link } from "react-router-dom";
-import "./MedhaSamman.css"; // Import custom CSS
+import "./MedhaSamman.css";
 
 function MedhaSamman() {
-  return (
-    <div className="relative mt-4 flex w-full items-center justify-evenly rounded-xl bg-[#e7c91ce8] p-8 max-md:flex-col">
-      <img className="w-1/8 max-md:w-2/3" src="/Medha-logo.png" />
-      <div className="top-6 right-72 text-lg font-bold text-black md:absolute md:self-end"></div>
-      <table className="max-w-[1000px] border-collapse overflow-hidden rounded-2xl border border-gray-300 bg-white shadow-lg md:w-[90vw]">
-        <tbody>
-          <tr className="transition hover:scale-[1.01] hover:bg-slate-100">
-            <td className="border border-gray-300 bg-[#e6f0fa] p-5 text-center text-lg font-semibold text-gray-800">
-              Medha Samman 2025 - Class 10
-            </td>
-            <td className="border border-gray-300 p-5 text-center text-base">
-              <Link
-                to="/kolkata/class-10"
-                className="font-semibold text-blue-600 hover:underline"
-              >
-                Kolkata
-              </Link>
-            </td>
-            <td className="border border-gray-300 p-5 text-center text-base">
-              <Link
-                to="/ranchi/class-10"
-                className="zoom-animation text-lg font-semibold text-red-600"
-              >
-                Ranchi
-              </Link>
-            </td>
-          </tr>
+  const comingSoon = (e: React.MouseEvent) => {
+    e.preventDefault();
+    alert("Registration Coming Soon!");
+  };
 
-          <tr className="transition hover:scale-[1.01] hover:bg-slate-100">
-            <td className="border border-gray-300 bg-[#e6f0fa] p-5 text-center text-lg font-semibold text-gray-800">
-              Medha Samman 2025 - Class 12
-            </td>
-            <td className="border border-gray-300 p-5 text-center text-base">
-              <Link
-                to="/kolkata/class-12"
-                className="font-semibold text-blue-600 hover:underline"
-              >
-                Kolkata
-              </Link>
-            </td>
-            <td className="border border-gray-300 p-5 text-center text-base">
-              <Link
-                to="/ranchi/class-12"
-                className="zoom-animation text-lg font-semibold text-red-600"
-              >
-                Ranchi
-              </Link>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  return (
+    <section className="medha-section">
+      <div className="medha-container">
+        <div className="glow glow-1"></div>
+        <div className="glow glow-2"></div>
+
+        <div className="medha-header">
+          <img
+            src="/Medha-logo.png"
+            alt="Medha Samman"
+            className="medha-logo"
+          />
+
+          <div className="header-content">
+            <span className="badge">
+              🎓 Registration Open
+            </span>
+
+            <h2>Medha Samman 2026</h2>
+
+            <p>
+              Select your city and class to continue
+              registration
+            </p>
+          </div>
+        </div>
+
+        <div className="events-grid">
+          {/* LIVE CARD */}
+          <Link
+            to="/kolkata/class-12"
+            className="event-card live-card"
+          >
+            <span className="live-badge">
+              LIVE
+            </span>
+
+            <h3>Kolkata</h3>
+
+            <p>Class 12 Registration Open</p>
+          </Link>
+
+          {/* COMING SOON CARDS */}
+
+          <a
+            href="#"
+            onClick={comingSoon}
+            className="event-card"
+          >
+            <h3>Kolkata</h3>
+            <p>Class 10</p>
+            <span className="soon">
+              Coming Soon
+            </span>
+          </a>
+
+          <a
+            href="#"
+            onClick={comingSoon}
+            className="event-card"
+          >
+            <h3>Durgapur</h3>
+            <p>Class 12 & Class 10</p>
+            <span className="soon">
+              Coming Soon
+            </span>
+          </a>
+
+          <a
+            href="#"
+            onClick={comingSoon}
+            className="event-card"
+          >
+            <h3>Siliguri</h3>
+            <p>Class 12 & Class 10</p>
+            <span className="soon">
+              Coming Soon
+            </span>
+          </a>
+
+          <a
+            href="#"
+            onClick={comingSoon}
+            className="event-card"
+          >
+            <h3>Ranchi</h3>
+            <p>Class 12 & Class 10</p>
+            <span className="soon">
+              Coming Soon
+            </span>
+          </a>
+
+          <a
+            href="#"
+            onClick={comingSoon}
+            className="event-card"
+          >
+            <h3>Patna</h3>
+            <p>Class 12 & Class 10</p>
+            <span className="soon">
+              Coming Soon
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
   );
 }
 
