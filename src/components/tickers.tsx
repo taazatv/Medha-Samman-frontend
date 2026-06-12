@@ -1,5 +1,3 @@
-import "./ticker.css";
-
 export default function Tickers() {
   const sponsors = [
     "/sponsors/Aakash_Logo.png",
@@ -14,7 +12,7 @@ export default function Tickers() {
     "/sponsors/RG_Logo.png",
     "/sponsors/innxt.jpg",
 
-    // Duplicate for seamless looping
+    // duplicate for smooth loop
     "/sponsors/Aakash_Logo.png",
     "/sponsors/Bhawanipur_Logo.png",
     "/sponsors/Biswa_Bangla_Logo.png",
@@ -29,13 +27,12 @@ export default function Tickers() {
   ];
 
   return (
-    <section className="relative overflow-hidden py-4 bg-transparent">
-      <div className="ticker-track">
+    <div className="overflow-hidden py-4">
+      <div className="flex w-max animate-pulse gap-4">
         {sponsors.map((sponsor, index) => (
           <div
             key={index}
             className="
-              mx-3
               flex
               h-20
               min-w-[180px]
@@ -47,7 +44,7 @@ export default function Tickers() {
               shadow-md
               transition-all
               duration-300
-              hover:-translate-y-1
+              hover:scale-105
               hover:shadow-xl
             "
           >
@@ -55,11 +52,10 @@ export default function Tickers() {
               src={sponsor}
               alt={`Sponsor ${index}`}
               className="h-12 w-auto object-contain"
-              loading="lazy"
             />
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }

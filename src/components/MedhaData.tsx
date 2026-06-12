@@ -53,7 +53,13 @@ function MedhaData() {
               query: search,
             },
           });
-        setSuggestions(res.data);
+        setSuggestions(
+  Array.isArray(res.data)
+    ? res.data
+    : Array.isArray(res.data?.schools)
+    ? res.data.schools
+    : []
+);
       } catch (err) {
         console.error("Error fetching suggestions:", err);
         setSuggestions([]);
@@ -79,7 +85,13 @@ function MedhaData() {
             classType: classType.replace("class-", ""),
           },
         });
-      setSuggestions(res.data);
+     setSuggestions(
+  Array.isArray(res.data)
+    ? res.data
+    : Array.isArray(res.data?.schools)
+    ? res.data.schools
+    : []
+);
     } catch (err) {
       console.error("Error fetching all schools:", err);
       setSuggestions([]);
@@ -113,7 +125,7 @@ function MedhaData() {
         setError("");
       }
 
-      setResults(res.data);
+      setResults(Array.isArray(res.data) ? res.data : []);
       setSelectedSchool(search.trim());
       setHasSearched(true);
     } catch (err) {
@@ -196,19 +208,22 @@ function MedhaData() {
                     </div>
                   )}
 
-                {suggestions.length > 0 && !selectedSchool && !hasSearched && (
-                  <ul className="absolute top-full z-10 mt-1 max-h-60 w-full overflow-y-auto rounded-lg border border-gray-200 bg-white shadow-lg">
-                    {suggestions.map((school, index) => (
-                      <li
-                        key={index}
-                        className="cursor-pointer border-b border-gray-100 px-4 py-2 last:border-0 hover:bg-blue-50"
-                        onClick={() => handleSuggestionClick(school)}
-                      >
-                        {school}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                {Array.isArray(suggestions) &&
+  suggestions.length > 0 &&
+  !selectedSchool &&
+  !hasSearched && (
+    <ul className="absolute top-full z-10 mt-1 max-h-60 w-full overflow-y-auto rounded-lg border border-gray-200 bg-white shadow-lg">
+      {suggestions.map((school: string, index: number) => (
+        <li
+          key={index}
+          className="cursor-pointer border-b border-gray-100 px-4 py-2 last:border-0 hover:bg-blue-50"
+          onClick={() => handleSuggestionClick(school)}
+        >
+          {school}
+        </li>
+      ))}
+    </ul>
+)}
               </div>
 
               <button
