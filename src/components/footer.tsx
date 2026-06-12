@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import {
   MapPin,
   Building2,
-  Award,
   Globe,
   ArrowUpRight,
 } from "lucide-react";
